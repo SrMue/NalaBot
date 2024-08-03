@@ -15,11 +15,16 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
+
     if message.content.startswith('$hello'):
         await message.channel.send("Hi!")
     elif message.content.startswith('$bye'):
         await message.channel.send("\\U0001f642")
+    elif message.content.startswith('$mem'):
+        with open('descarga--2-.jpg', 'rb') as f:#fijar que la imagen se llame igual aca que en la carpeta imagenes
+            picture = discord.File(f)
+        await message.channel.send(file=picture)
     else:
         await message.channel.send(message.content)
 
-client.run(1264005828730421402)
+client.run('MTI2NDAwNTgyODczMDQyMTQwMg.GwycmV.-CrRyQ90sHYKXWspn7QNkp0161Dq0sGCdzR_GU')
